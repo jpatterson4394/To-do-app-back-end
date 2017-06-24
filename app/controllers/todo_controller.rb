@@ -1,6 +1,7 @@
 class TodoController < ApplicationController
     def index
     end
-    def show
+    def show 
+        @todo_name=params[:name]
     end
 end    
