@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
- get 'todo/index', to:'todo#index'
- get 'todo/show/:id', to:'todo#show'
- get 'todo/new', to: 'todo#new'
- get 'todo/create', to: 'todo#create'
- get 'todo/edit/:id', to: 'todo#edit'
- get 'todo/update/:id', to: 'todo#update'
- get 'todo/destroy/:id', to: 'todo#destroy'
+root to: 'todo#index'
+ get '/show/:id', to:'todo#show'
+ get '/new', to: 'todo#new'
+ get '/create', to: 'todo#create'
+ get '/edit/:id', to: 'todo#edit'
+ get '/update/:id', to: 'todo#update'
+ get '/destroy/:id', to: 'todo#destroy'
 end

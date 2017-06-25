@@ -18,7 +18,7 @@ class TodoController < ApplicationController
        t.amount = params['amount']
        t.location = params['location']
        t.save
-       redirect_to "/todo/show/#{ t.id }"
+       redirect_to "/show/#{ t.id }"
     end
     def edit
          @todo = Todo.find_by_id(params[:id])
@@ -30,12 +30,12 @@ class TodoController < ApplicationController
       t.amount = params['amout']
       t.location = params['location']
       t.save
-      redirect_to "/todo/show/#{t.id}"
+      redirect_to "/show/#{t.id}"
     end
     def destroy
      t = Todo.find_by_id(params[:id])
      t.destroy
-     redirect_to "/todo/index"
+     redirect_to "/index"
     end
 
    
