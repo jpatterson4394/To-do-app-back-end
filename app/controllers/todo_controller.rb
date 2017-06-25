@@ -32,10 +32,11 @@ class TodoController < ApplicationController
       t.save
       redirect_to "/show/#{t.id}"
     end
+    
     def destroy
-     t = Todo.find_by_id(params[:id])
-     t.destroy
-     redirect_to "/index"
+        t = Todo.find_by_id(params[:id])
+        t.destroy
+        redirect_to "/"
     end
 
    
