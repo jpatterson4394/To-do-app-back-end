@@ -1,15 +1,15 @@
 class TodoController < ApplicationController
     def index
     end
+    
     def show 
-
         @todo = Todo.find_by_id(params[:id])
         @todo_name=@todo.task
-        
     end
+    
     def new
-        
     end
+    
     def create
        t = Todo.new
        t.task = params['task']
@@ -19,4 +19,23 @@ class TodoController < ApplicationController
        t.save
        redirect_to "/todo/show/#{ t.id }"
     end
+    def edit
+         @todo = Todo.find_by_id(params[:id])
+    end
+    def update
+      t = Todo.find_by_id(params['id'])
+      t.task = params['task']
+      t.time = params['time']
+      t.amount = params['amout']
+      t.location = params['location']
+      t.save
+      redirect_to "/todo/show/#{t.id}"
+    end
+    def destroy
+     t = Todo.find_by_id(params[:id])
+     t.destroy
+     redirect_to "/todo/index"
+    end
+
+   
 end    

@@ -1,0 +1,12 @@
+<div class="card">
+  <h2>Edit this todo...</h2>
+
+  <form action="/todo/update/<%= @todo.id %>">
+    <input class="text-input" name="task" type="text" value="<%= @todo.task %>">
+    <input class="text-input" name="time" type="time" value="<%= @todo.time %>">
+     <input class="text-input" name="amount" type="number" value="<%= @todo.amount %>">
+      <input class="text-input" name="location" type="text" value="<%= @todo.location %>">
+    <input class="button add-new-todo-button" type="submit" value="Edit todo">
+    <a href="/todo/index" class="simple-link">Go back...</a>
+  </form>
+</div>
